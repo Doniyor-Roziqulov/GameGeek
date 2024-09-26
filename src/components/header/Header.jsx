@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Link, NavLink } from "react-router-dom";
-import gg from "@/images/gg.svg";
+import gg from "@/images/GG.svg";
 import map from "@/images/map.svg";
 import logo from "@/images/logo.svg";
 import { VscCallIncoming } from "react-icons/vsc";
