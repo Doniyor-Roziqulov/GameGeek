@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import logo from "@/images/logofooter.svg";
-import gg from "@/images/gg.svg";
+import gg from "@/images/GG.svg";
 import { FaFacebook, FaInstagram, FaLinkedin, FaTwitter } from "react-icons/fa";
 import { footerlist, footerlist2, footerlist3 } from "@/static";
 import { IoMdHelpCircle } from "react-icons/io";
