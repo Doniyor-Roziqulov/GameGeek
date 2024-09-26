@@ -11,9 +11,11 @@ import React, { useEffect, useState } from "react";
 const Products = () => {
     const [brandsUrl, setBrandsUrl] = useState("");
     const [colorsUrl, setColorsUrl] = useState("");
+    const [cheapPrice, setCheapPrice] = useState("");
     const { data, isFetching } = useGetProductsQuery({
         brand: brandsUrl,
         color: colorsUrl,
+        price: cheapPrice,
     });
     const { data: brands } = useGetBrandsQuery();
     const { data: colors } = useGetColorsQuery();
@@ -37,7 +39,6 @@ const Products = () => {
                 selectedBrands[key] && filteredSelectedBrands.push(key);
             }
             let url = "";
-
             filteredSelectedBrands.forEach((item) => {
                 url += `&brand_name=${item}`;
             });
@@ -45,11 +46,19 @@ const Products = () => {
         }
     }, [selectedBrands]);
 
-    let prevColor = "";
     const handleColorChange = (color) => {
         color = color.split("");
         color.shift();
         setColorsUrl(`&color_options_like=%23${color.join("")}`);
+    };
+
+    const handleFilter = (e) => {
+        e = e.target.value;
+        if (e == "cheap") {
+            setCheapPrice("&_sort=price");
+        } else {
+            setCheapPrice("");
+        }
     };
     return (
         <section className="pb-32">
@@ -58,11 +67,13 @@ const Products = () => {
                 <div className="container mx-auto max-w-[1310px] px-5 flex items-center justify-between pt-7 pb-6">
                     <p className="text-xl text-[#0BA42D]">Filter by:</p>
                     <select
+                        onChange={(e) => handleFilter(e)}
                         className="bg-transparent text-xl text-[#0BA42D]"
                         name="filter"
                         id="">
-                        <option value="">Expensive</option>
-                        <option value="">Cheap</option>
+                        <option value="">Sort by</option>
+                        <option value="expensive">Expensive</option>
+                        <option value="cheap">Cheap</option>
                     </select>
                 </div>
             </div>

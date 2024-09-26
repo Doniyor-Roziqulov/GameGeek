@@ -54,8 +54,14 @@ import { api } from "./index";
 export const productsApi = api.injectEndpoints({
     endpoints: (build) => ({
         getProducts: build.query({
-            query: ({ page = 1, limit = 9, brand = "all", color = "all" }) => ({
-                url: `/products?_page=${page}&_limit=${limit}${brand}${color}`,
+            query: ({
+                page = 1,
+                limit = 9,
+                brand = "all",
+                color = "all",
+                price = "all",
+            }) => ({
+                url: `/products?_page=${page}&_limit=${limit}${brand}${color}${price}`,
             }),
             providesTags: ["Products"],
         }),
@@ -95,7 +101,7 @@ export const productsApi = api.injectEndpoints({
         updateProduct: build.mutation({
             query: ({ id, body }) => ({
                 url: `/products/${id}`,
-                method: "PUT", // or "PATCH"
+                method: "PUT",
                 body,
             }),
             invalidatesTags: ["Product"],

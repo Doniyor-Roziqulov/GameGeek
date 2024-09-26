@@ -1,5 +1,5 @@
 import { useGetProductByIdQuery } from "@/context/api/productApi";
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import ReactStars from "react-stars";
 import { FaMinus, FaPlus, FaRegHeart } from "react-icons/fa";
@@ -11,12 +11,37 @@ import { addToCart } from "@/context/slices/cartSlice";
 
 const Detail = () => {
     const { proId } = useParams();
+    const [inc, setInc] = useState(1);
     const { data } = useGetProductByIdQuery(proId);
     const cart = useSelector((state) => state.cart.value);
+    const [cartItem, setCartItem] = useState(cart);
+    const [total, setTotal] = useState(0);
     const dispatch = useDispatch();
     useEffect(() => {
         window.scrollTo(0, 0);
     }, []);
+
+    const updateQuantity = (id, amount, btn = true) => {
+        setCartItem((prev) =>
+            btn
+                ? prev.map((pro) =>
+                      pro.id == id
+                          ? { ...pro, quantity: pro.quantity + amount }
+                          : pro
+                  )
+                : prev.map((pro) =>
+                      pro.id == id ? { ...pro, quantity: amount } : pro
+                  )
+        );
+    };
+
+    useEffect(() => {
+        const subtotal = cartItem.reduce(
+            (acc, item) => acc + item.quantity * item.price,
+            0
+        );
+        setTotal(subtotal);
+    }, [cartItem]);
 
     return (
         <section className="pb-[161px] pt-24">
@@ -86,11 +111,22 @@ const Detail = () => {
                         </div>
                         <div className="flex items-center gap-x-[62px] my-[25px]">
                             <div className="flex items-center border-[3px] rounded-full border-[#0BA42D]">
-                                <button className="px-[30px] py-[19px]">
+                                <button
+                                    disabled={inc <= 1}
+                                    onClick={() => {
+                                        updateQuantity(data.id, -1);
+                                        setInc(inc - 1);
+                                    }}
+                                    className="px-[30px] py-[19px]">
                                     <FaMinus />
                                 </button>
-                                <p>1</p>
-                                <button className="px-[30px] py-[19px]">
+                                <p>{inc}</p>
+                                <button
+                                    onClick={() => {
+                                        updateQuantity(data.id, +1);
+                                        setInc(inc + 1);
+                                    }}
+                                    className="px-[30px] py-[19px]">
                                     <FaPlus />
                                 </button>
                             </div>

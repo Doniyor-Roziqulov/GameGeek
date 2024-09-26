@@ -96,7 +96,7 @@ const Header = () => {
             <div
                 className={`absolute bg-white left-0 right-0 ${
                     isShrunk &&
-                    "absolute  bg-neutral-200 top-0 h-[80px] left-0 right-0"
+                    "absolute  bg-neutral-300 top-0 h-[80px] left-0 right-0"
                 }`}>
                 <div
                     className={`container mx-auto max-w-[1310px] px-5 border-b py-[39px] ${
