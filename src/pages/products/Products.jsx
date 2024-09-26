@@ -72,7 +72,6 @@ const Products = () => {
                         name="filter"
                         id="">
                         <option value="">Sort by</option>
-                        <option value="expensive">Expensive</option>
                         <option value="cheap">Cheap</option>
                     </select>
                 </div>
