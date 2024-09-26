@@ -9,6 +9,9 @@ import { decrementCart } from "@/context/slices/cartSlice";
 import {} from "number-brm";
 
 const Cart = () => {
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, []);
     const cart = useSelector((state) => state.cart.value);
     const [cartItem, setCartItem] = useState(cart);
     const [total, setTotal] = useState(0);
