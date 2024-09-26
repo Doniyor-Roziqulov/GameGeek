@@ -68,7 +68,9 @@ const Products = () => {
             </div>
             <div className="container mx-auto max-w-[1310px] px-5 pt-16">
                 <div className="flex justify-between">
-                    <div className="w-[270px] border-t-2 border-dashed border-[#454444CC]">
+                    <div
+                        data-aos="fade-right"
+                        className="w-[270px] border-t-2 border-dashed border-[#454444CC]">
                         <Filter
                             brands={brands}
                             colors={colors}

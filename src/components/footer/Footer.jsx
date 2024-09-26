@@ -13,7 +13,7 @@ const Footer = () => {
             <div className="pb-[55px]">
                 <div className="container mx-auto max-w-[1310px] px-5">
                     <div className="flex justify-between">
-                        <div>
+                        <div data-aos="zoom-out-down">
                             <Link to={"/"}>
                                 <img src={logo} alt="Footer logo" />
                             </Link>
@@ -48,7 +48,9 @@ const Footer = () => {
                             </div>
                         </div>
                         <div className="text-white flex gap-x-[125px]">
-                            <div className="flex flex-col gap-y-[19px]">
+                            <div
+                                data-aos="zoom-out-down"
+                                className="flex flex-col gap-y-[19px]">
                                 <strong className="block mb-[10px] text-2xl">
                                     Services
                                 </strong>
@@ -60,7 +62,9 @@ const Footer = () => {
                                     </Link>
                                 ))}
                             </div>
-                            <div className="flex flex-col gap-y-[19px]">
+                            <div
+                                data-aos="zoom-out-down"
+                                className="flex flex-col gap-y-[19px]">
                                 <strong className="block mb-[10px] text-2xl">
                                     Help{" "}
                                 </strong>
@@ -72,7 +76,9 @@ const Footer = () => {
                                     </Link>
                                 ))}
                             </div>
-                            <div className="flex flex-col gap-y-[19px]">
+                            <div
+                                data-aos="zoom-out-down"
+                                className="flex flex-col gap-y-[19px]">
                                 <strong className="block mb-[10px] text-2xl">
                                     About Us
                                 </strong>

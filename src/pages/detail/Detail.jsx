@@ -28,7 +28,7 @@ const Detail = () => {
                     </span>
                 </p>
                 <div className="flex justify-between pb-[109px] border-dashed border-b-2 border-[#6A6969]">
-                    <div>
+                    <div data-aos="fade-right">
                         <div className="w-[650px] h-[650px] bg-[#F4F4F4] flex items-center justify-center">
                             <img
                                 className="w-[450px] h-[450px] object-contain"
@@ -52,7 +52,7 @@ const Detail = () => {
                                 ))}
                         </div>
                     </div>
-                    <div>
+                    <div data-aos="fade-left">
                         <h2 className="text-5xl mb-4">{data?.name}</h2>
                         <p className="text-lg font-medium mb-1">
                             {data?.description}

@@ -39,7 +39,7 @@ const Header = () => {
 
     return (
         <header
-            className={`header fixed left-0 top-0 right-0 bg-white ${
+            className={`header fixed left-0 top-0 right-0 bg-white z-10 ${
                 isShrunk && "h-[80px]"
             }`}>
             <div

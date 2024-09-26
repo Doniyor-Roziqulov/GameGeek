@@ -5,8 +5,14 @@ import Products from "./pages/products/Products";
 import NotFound from "./pages/notfound/NotFound";
 import Detail from "./pages/detail/Detail";
 import Cart from "./pages/cart/Cart";
+import "aos/dist/aos.css";
+import { useEffect } from "react";
+import Aos from "aos";
 
 function App() {
+    useEffect(() => {
+        Aos.init({ duration: 1000 });
+    }, []);
     return (
         <>
             <Routes>

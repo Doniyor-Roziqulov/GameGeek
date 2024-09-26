@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { removeFromCart } from "@/context/slices/cartSlice";
 import { AiOutlineClose } from "react-icons/ai";
 import { FaMinus, FaPlus } from "react-icons/fa";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { LuMoveLeft } from "react-icons/lu";
 import { decrementCart } from "@/context/slices/cartSlice";
 import {} from "number-brm";
@@ -47,7 +47,9 @@ const Cart = () => {
                 </button>
                 <h2 className="text-[32px] mb-14">SHOPPING CART</h2>
                 <div className="flex items-start justify-between">
-                    <div className="pr-7 flex flex-col border-r-2">
+                    <div
+                        data-aos="fade-right"
+                        className="pr-7 flex flex-col border-r-2">
                         <div className="text-[22px] flex items-center justify-between w-[760px] pb-2 pt-3 border-dashed border-b-2 border-[#6A6969] border-t-2">
                             <p>Product</p>
                             <div className="flex items-center gap-x-[110px]">
@@ -114,7 +116,7 @@ const Cart = () => {
                             );
                         })}
                     </div>
-                    <div>
+                    <div data-aos="fade-left">
                         <h2 className="text-[32px] mb-2">CART TOTALS</h2>
                         <div className="pt-9 pb-10 border-dashed border-y-2 border-[#6A6969] flex flex-col gap-y-5">
                             <div className="flex items-center justify-between">

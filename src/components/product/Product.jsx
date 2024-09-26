@@ -14,6 +14,7 @@ const Product = ({ item, isFetching }) => {
     }, []);
     const lists = item?.map((item) => (
         <div
+            data-aos="zoom-out-up"
             className="w-[300px] h-[630px]  flex flex-col items-start justify-between"
             key={item.id}>
             <div>

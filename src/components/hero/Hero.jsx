@@ -10,7 +10,9 @@ const Hero = () => {
                 backgroundSize: "cover",
             }}
             className="pt-[236px] pb-[217px] bg-no-repeat">
-            <div className="container mx-auto max-w-[1310px] px-5">
+            <div
+                data-aos="zoom-in"
+                className="container mx-auto max-w-[1310px] px-5">
                 <p className="text-xl mb-8 text-white">
                     / Start / Categories
                     <br />/ Headphones and audio for gaming
