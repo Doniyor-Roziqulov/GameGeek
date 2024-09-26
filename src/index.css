@@ -1,0 +1,62 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+    scroll-behavior: smooth;
+}
+
+@font-face {
+    font-display: swap;
+    font-family: "Readex Pro";
+    font-style: normal;
+    font-weight: 300;
+    src: url("./fonts/readex-pro-v21-latin-300.woff2") format("woff2"),
+        url("./fonts/readex-pro-v21-latin-300.woff") format("woff");
+}
+@font-face {
+    font-display: swap;
+    font-family: "Readex Pro";
+    font-style: normal;
+    font-weight: 400;
+    src: url("./fonts/readex-pro-v21-latin-regular.woff2") format("woff2"),
+        url("./fonts/readex-pro-v21-latin-regular.woff") format("woff");
+}
+@font-face {
+    font-display: swap;
+    font-family: "Readex Pro";
+    font-style: normal;
+    font-weight: 500;
+    src: url("./fonts/readex-pro-v21-latin-500.woff2") format("woff2"),
+        url("./fonts/readex-pro-v21-latin-500.woff") format("woff");
+}
+@font-face {
+    font-display: swap;
+    font-family: "Readex Pro";
+    font-style: normal;
+    font-weight: 600;
+    src: url("./fonts/readex-pro-v21-latin-600.woff2") format("woff2"),
+        url("./fonts/readex-pro-v21-latin-600.woff") format("woff");
+}
+@font-face {
+    font-display: swap;
+    font-family: "Readex Pro";
+    font-style: normal;
+    font-weight: 700;
+    src: url("./fonts/readex-pro-v21-latin-700.woff2") format("woff2"),
+        url("./fonts/readex-pro-v21-latin-700.woff") format("woff");
+}
+
+body {
+    font-family: "Readex Pro", sans-serif;
+}
+
+.header .active {
+    color: #4c4cf7;
+}
+
+.footer-text {
+    background: linear-gradient(90deg, #ebe2f4 0%, #14ff00 100%);
+    color: transparent;
+    background-clip: text;
+}
